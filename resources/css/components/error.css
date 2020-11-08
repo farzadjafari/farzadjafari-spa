@@ -1,0 +1,14 @@
+.contain-error{
+    position: relative;
+}
+.contain-error .error{
+    position: absolute;
+    right: 0.5rem;
+    background: #f67575;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+}
