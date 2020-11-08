@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 import Home from './views/Home';
 import Resume from './views/Resume';
 import Projects from './views/Projects';
+import Project from './views/Project'
 
 
 let routes = [
@@ -16,6 +17,10 @@ let routes = [
     {
         path: '/projects',
         component: Projects,
+    },
+    {
+        path: '/projects/:slug',
+        component: Project,
     }
 ];
 
