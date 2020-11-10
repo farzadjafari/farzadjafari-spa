@@ -4,5 +4,9 @@ import router from './routes'
 new Vue({
     el: "#app",
 
-    router: router
+    router: router,
+
+    mounted () {
+        feather.replace()
+    }
 });

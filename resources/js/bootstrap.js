@@ -11,5 +11,3 @@ window.feather = feather;
 window.Form = Form;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-
-feather.replace();

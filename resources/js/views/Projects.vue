@@ -1,24 +1,26 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <h1>Projects</h1>
+    <div>
+        <section class="flex container flex-col">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl mb-12 text-center">Projects</h1>
 
-            <project v-for="project in projects"
-                     :name="project.name"
-                     :slug="project.slug"
-                     :link="project.link"
-                     :why="project.why"
-                     :target="!project.why"
-            ></project>
-        </div>
+            <div class="flex flex-wrap">
+                <project-thumbnail v-for="project in projects"
+                                   :name="project.name"
+                                   :slug="project.slug"
+                                   :link="project.link"
+                                   :why="project.why"
+                                   :target="!project.why"
+                ></project-thumbnail>
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
-import Project from './../components/ProjectThumbnail.vue'
+import ProjectThumbnail from './../components/ProjectThumbnail.vue'
 
 export default {
-    components: {Project},
+    components: {ProjectThumbnail},
     data () {
         return {
             projects: {}
@@ -26,9 +28,9 @@ export default {
     },
     created () {
         axios.get('/api/projects')
-        .then(response => {
-            this.projects = response.data
-        })
+            .then(response => {
+                this.projects = response.data
+            })
     },
 }
 </script>

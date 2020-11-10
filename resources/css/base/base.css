@@ -1,15 +1,27 @@
-html{
+html {
     height:100%;
     font-family: 'Lato', sans-serif;
 }
 
-body{
+body {
     height: auto;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-section{
+section {
     margin: 2rem 0;
+}
+
+ol, ul {
+    padding-left: 2rem !important;
+}
+
+ul li {
+    @apply list-disc
+}
+
+ol li {
+    @apply list-decimal
 }

@@ -11,8 +11,8 @@ class ProjectsController extends Controller
         return Project::all();
     }
 
-    public function show(Project $project)
+    public function show(Project $project, $slug)
     {
-        return $project;
+        return Project::where('slug', $slug)->first();
     }
 }
