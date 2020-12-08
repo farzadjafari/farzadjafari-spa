@@ -1,27 +1,29 @@
+@layer base {
+    html {
+        @apply h-screen
+    }
+
+    body {
+        @apply  h-auto min-h-screen flex flex-col
+    }
+
+    section {
+        @apply my-8 mx-0
+    }
+
+    ol, ul {
+        @apply pl-8
+    }
+
+    ul li {
+        @apply list-disc
+    }
+
+    ol li {
+        @apply list-decimal
+    }
+}
+
 html {
-    height:100%;
-    font-family: 'Lato', sans-serif;
-}
-
-body {
-    height: auto;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-section {
-    margin: 2rem 0;
-}
-
-ol, ul {
-    padding-left: 2rem !important;
-}
-
-ul li {
-    @apply list-disc
-}
-
-ol li {
-    @apply list-decimal
+    @apply font-sans
 }

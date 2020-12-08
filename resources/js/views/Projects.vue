@@ -4,7 +4,7 @@
             <h1 class="text-2xl md:text-3xl lg:text-4xl mb-12 text-center">Projects</h1>
 
             <div class="flex flex-wrap">
-                <project-thumbnail v-for="project in projects"
+                <project-thumbnail v-for="project in projects" :key="project"
                                    :name="project.name"
                                    :slug="project.slug"
                                    :link="project.link"
