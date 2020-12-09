@@ -4,7 +4,7 @@
             <h1 class="text-2xl md:text-3xl lg:text-4xl mb-12 text-center">Projects</h1>
 
             <div class="flex flex-wrap">
-                <project-pulse v-for="index in 10" :key="index" v-if="isPulsing"></project-pulse>
+                <project-pulse v-for="index in 9" :key="index" v-if="isPulsing"></project-pulse>
 
                 <project-thumbnail v-for="(project, i) in projects" :key="i"
                                    :name="project.name"

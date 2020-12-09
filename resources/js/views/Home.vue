@@ -14,7 +14,7 @@
         </section>
 
         <section>
-            <div class="container flex">
+            <div class="container">
                 <div class="shadow-lg p-4 md:p-12">
                     <div class="text-left">
                         <h3 class="text-lg md:text-xl lg:text-2xl">I am interested in meeting new people.

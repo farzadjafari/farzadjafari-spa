@@ -8,18 +8,18 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-<div id="app">
+<div id="app" class="flex flex-col h-screen">
     <header>
         @include('layouts.partials.header')
     </header>
 
-    <main class="@yield('main-class')">
+    <main class="@yield('main-class') flex-1">
         <router-view></router-view>
 
         @yield('main')
     </main>
 
-    <footer>
+    <footer class="mt-auto">
         @include('layouts.partials.footer')
     </footer>
 </div>

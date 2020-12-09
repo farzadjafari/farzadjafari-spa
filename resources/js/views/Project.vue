@@ -11,16 +11,20 @@
             <div class="col-12 text-left">
                 <div class="content-wrapper project">
                     <h3 class="text-lg md:text-xl lg:text-2xl">Why?</h3>
-                    <div v-html="project.why"></div>
+                    <description-pulse v-if="pulsing"></description-pulse>
+                    <div v-html="project.why" v-if="!pulsing" class="mb-4 pl-8"></div>
 
                     <h3 class="text-lg md:text-xl lg:text-2xl">How?</h3>
-                    <div v-html="project.how"></div>
+                    <description-pulse v-if="pulsing"></description-pulse>
+                    <div v-html="project.how" v-if="!pulsing" class="mb-4 pl-8"></div>
 
                     <h3 class="text-lg md:text-xl lg:text-2xl">What?</h3>
-                    <div v-html="project.what"></div>
+                    <description-pulse v-if="pulsing"></description-pulse>
+                    <div v-html="project.what" v-if="!pulsing" class="mb-4 pl-8"></div>
 
                     <h3 class="text-lg md:text-xl lg:text-2xl">Challenges!<small>*</small></h3>
-                    <div v-html="project.challenge"></div>
+                    <description-pulse v-if="pulsing"></description-pulse>
+                    <div v-html="project.challenge" v-if="!pulsing" class="mb-4 pl-8"></div>
                 </div>
             </div>
 
@@ -35,16 +39,22 @@
 </template>
 
 <script>
+import DescriptionPulse from '../components/DescriptionPulse'
+
 export default {
+    components: {DescriptionPulse},
     data () {
         return {
-            project: ''
+            project: '',
+            pulsing: true
         }
     },
     created () {
         axios.get('/api/' + this.$route.path)
             .then(response => {
                 this.project = response.data
+
+                this.pulsing = false
             })
     }
 }
