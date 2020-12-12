@@ -49,8 +49,8 @@ export default {
             pulsing: true
         }
     },
-    created () {
-        axios.get('/api/' + this.$route.path)
+    mounted () {
+        axios.get('/api/projects/' + this.$route.params.slug)
             .then(response => {
                 this.project = response.data
 
