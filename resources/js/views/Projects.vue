@@ -29,16 +29,23 @@ export default {
     data () {
         return {
             projects: {},
-            isPulsing: true,
+            isPulsing: false,
+        }
+    },
+    methods: {
+        fetchProjects () {
+            if (Object.keys(this.projects).length === 0) {
+                axios.get('/api/projects')
+                    .then(response => {
+                        this.projects = response.data
+
+                        this.isPulsing = false
+                    })
+            }
         }
     },
     created () {
-        axios.get('/api/projects')
-            .then(response => {
-                this.projects = response.data
-
-                this.isPulsing = false
-            })
+        this.fetchProjects()
     },
 }
 </script>
